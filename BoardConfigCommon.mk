@@ -36,10 +36,10 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_BATTERY_DEVICE_NAME := "battery"
 BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
 BOARD_CHARGING_CMDLINE_VALUE := "true"
-WITH_LINEAGE_CHARGER := false
+WITH_MOKEE_CHARGER := false
 
 # CMHW
-BOARD_HARDWARE_CLASS += device/samsung/msm8974-common/lineagehw
+BOARD_HARDWARE_CLASS += device/samsung/msm8974-common/mkhw
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
