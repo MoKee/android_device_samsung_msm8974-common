@@ -111,11 +111,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf
 
+ifneq ($(TARGET_PRODUCT),mk_jsglte)
 # IR Blaster
-ifneq ($(TARGET_DEVICE),jsglte)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:system/vendor/etc/permissions/android.hardware.consumerir.xml \
-
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     consumerir.msm8974
