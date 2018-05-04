@@ -111,7 +111,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf
 
-ifneq ($(findstring jsglte, $(TARGET_PRODUCT)),)
+ifdef ($(BOARD_HAVE_IR_SENSOR),)
 # IR Blaster
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:system/vendor/etc/permissions/android.hardware.consumerir.xml \
