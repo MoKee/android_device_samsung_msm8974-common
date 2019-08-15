@@ -16,7 +16,7 @@
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     device/samsung/msm8974-common/overlay \
-    device/samsung/msm8974-common/overlay-lineage
+    device/samsung/msm8974-common/overlay-mokee
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -143,7 +143,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.samsung-qcom
+    vendor.mokee.livedisplay@2.0-service.samsung-qcom
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -184,11 +184,11 @@ PRODUCT_PACKAGES += \
 
 # Touch features
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.samsung
+    vendor.mokee.touch@1.0-service.samsung
 
 # Trust HAL
 PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
+    vendor.mokee.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
