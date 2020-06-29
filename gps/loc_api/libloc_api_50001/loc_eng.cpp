@@ -893,9 +893,9 @@ inline void LocEngReportStatus::log() const {
 //        case LOC_ENG_MSG_REPORT_NMEA:
 LocEngReportNmea::LocEngReportNmea(void* locEng,
                                    const char* data, int len) :
-    LocMsg(), mLocEng(locEng), mNmea(new char[len]), mLen(len)
+    LocMsg(), mLocEng(locEng), mNmea(new char[len+1]), mLen(len)
 {
-    memcpy((void*)mNmea, (void*)data, len);
+    strlcpy(mNmea, data, len+1);
     locallog();
 }
 void LocEngReportNmea::proc() const {
@@ -904,7 +904,6 @@ void LocEngReportNmea::proc() const {
     struct timeval tv;
     gettimeofday(&tv, (struct timezone *) NULL);
     int64_t now = tv.tv_sec * 1000LL + tv.tv_usec / 1000;
-    CALLBACK_LOG_CALLFLOW("nmea_cb", %d, mLen);
 
     if (locEng->nmea_cb != NULL)
         locEng->nmea_cb(now, mNmea, mLen);
